@@ -1453,7 +1453,7 @@ textarea { height: auto !important; }
 .team .team-description{background:#353535; text-align:center; padding:10px 15px; position:absolute; bottom:0px; left:0px; width:100%; -webkit-transition:all .3s ease; -o-transition:all .3s ease; transition: all .3s ease;}
 .team .team-description h4{font-size:16px; font-weight:600; line-height:24px; color: #ffffff; text-transform: uppercase; margin:0;}
 .team .team-description span{font-size: 15px; color: #ffd200;}
-.team .team-images img{display:inline-block;transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out;}
+.team .team-images img{display:inline-block;transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; max-width:260px;}
 .team:hover .team-images img{-o-transform: scale(1.07); -ms-transform: scale(1.07); -moz-transform: scale(1.07); -webkit-transform: scale(1.07); transform: scale(1.07);}
 .team .team-social-icon{ background: #ffd200; color: #fff; position: absolute; bottom:0px; left: 0px; width: 100%; padding: 10px; text-align: center; -webkit-transition: all .3s ease; -o-transition:all .3s ease; transition:all .3s ease;}
 .team .team-social-icon a{line-height: 24px; font-size: 18px; color: #fff; border:2px solid #fff; width: 35px; height: 35px; line-height: 32px; text-align: center; display: inline-block; margin-right:10px; -webkit-transition: all .3s ease; -o-transition: all .3s ease; transition: all .3s ease;}
