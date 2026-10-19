@@ -1,0 +1,58 @@
+/* Bootstrap owns layout, collapse behavior and the lg breakpoint. */
+.site-navbar { background: #fff; }
+.site-navbar-home > .container { background: orange; }
+.site-navbar-home > .container > :focus-visible { outline-color: #151515; }
+.site-navbar .navbar-brand { min-width: 0; max-width: 351px; }
+.site-navbar .navbar-brand img { width: 351px; height: auto; }
+.site-navbar .navbar-toggler { min-width: 44px; min-height: 44px; border: 0; color: #333; }
+.site-navbar .navbar-toggler:focus { box-shadow: none; }
+.site-navbar .navbar-nav { list-style: none; }
+.site-navbar .navbar-collapse { background: #151515; }
+.site-navbar .nav-item { border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+.site-navbar .nav-item:last-child { border-bottom: 0; }
+.site-navbar.navbar-light .navbar-nav .nav-link { color: #fff; padding: 10px 20px; font-size: 14px; font-weight: 500; text-transform: uppercase; }
+.site-navbar.navbar-light .navbar-nav .nav-link.active,
+.site-navbar.navbar-light .navbar-nav .nav-link:hover { color: #fe9900; }
+/* Keep interaction styling consistent across pages and override the legacy
+   global a:hover/a:focus !important reset. The underline inherits link color. */
+.site-navbar.navbar-light .navbar-nav .nav-link.active,
+.site-navbar.navbar-light .navbar-nav .nav-link:hover,
+.site-navbar.navbar-light .navbar-nav .nav-link:focus-visible {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 0.25em;
+}
+.site-navbar a:focus-visible,
+.site-navbar button:focus-visible { outline: 3px solid #a85f00; outline-offset: 3px; }
+
+.site-menu-icon { display: block; position: relative; width: 30px; height: 24px; }
+.site-menu-icon > span { position: absolute; left: 0; width: 100%; height: 2px; background: currentColor; transition: transform 200ms ease, opacity 200ms ease; }
+.site-menu-icon > span:nth-child(1) { top: 3px; }
+.site-menu-icon > span:nth-child(2) { top: 11px; }
+.site-menu-icon > span:nth-child(3) { top: 19px; }
+.navbar-toggler[aria-expanded="true"] .site-menu-icon > span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.navbar-toggler[aria-expanded="true"] .site-menu-icon > span:nth-child(2) { opacity: 0; }
+.navbar-toggler[aria-expanded="true"] .site-menu-icon > span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Necessary theme-only override: Bootstrap has no responsive background/text
+   utilities for switching the same collapse panel from dark mobile to desktop. */
+@media (min-width: 992px) {
+  .site-navbar .navbar-collapse { background: transparent; }
+  .site-navbar .nav-item { border-bottom: 0; }
+  .site-navbar.navbar-light .navbar-nav .nav-link { color: #222; padding: 8px; }
+  .site-navbar.navbar-light .navbar-nav .nav-link.active,
+  .site-navbar.navbar-light .navbar-nav .nav-link:hover { color: #fe9900; }
+  .site-navbar-home.navbar-light .navbar-nav .nav-link.active,
+  .site-navbar-home.navbar-light .navbar-nav .nav-link:hover,
+  .site-navbar-home.navbar-light .navbar-nav .nav-link:focus-visible {
+    color: #151515;
+    outline-color: #151515;
+  }
+}
+
+/* The existing .container matches the site's custom desktop content widths.
+   Bootstrap's container-lg has different widths here, so keep only this
+   mobile exception to make the expanded menu reach both viewport edges. */
+@media (max-width: 991.98px) {
+  .site-navbar > .container { width: 100%; max-width: none; padding: 0; }
+}
