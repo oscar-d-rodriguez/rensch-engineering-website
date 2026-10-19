@@ -13,18 +13,23 @@ def main():
     if any(not os.environ.get(name) for name in names):
         raise SystemExit('FTP check: required GitHub secrets are missing.')
     protocol = os.environ.get('FTP_PROTOCOL', 'ftps')
-    if protocol != 'ftps':
-        raise SystemExit('This preflight requires explicit FTPS; confirm the hosting protocol before changing the check.')
-    client = ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=30)
+    if protocol not in {'ftp', 'ftps'}:
+        raise SystemExit('This preflight supports FTP and explicit FTPS only.')
+    client = (ftplib.FTP_TLS(context=ssl.create_default_context(), timeout=30)
+              if protocol == 'ftps' else ftplib.FTP(timeout=30))
     stage = 'connecting'
     try:
         client.connect(os.environ['FTP_SERVER'], int(os.environ.get('FTP_PORT', '21')))
-        stage = 'validating TLS certificate'
-        client.auth()
+        if protocol == 'ftps':
+            stage = 'validating TLS certificate'
+            client.auth()
         stage = 'logging in'
         client.login(os.environ['FTP_USERNAME'], os.environ['FTP_PASSWORD'])
-        client.prot_p()
-        print('Encrypted FTPS login succeeded.')
+        if protocol == 'ftps':
+            client.prot_p()
+            print('Encrypted FTPS login succeeded.')
+        else:
+            print('FTP login succeeded on the confirmed plain-FTP connection; traffic is not encrypted.')
         stage = 'checking production folder'
         try:
             client.cwd(os.environ['FTP_SERVER_DIR'])
