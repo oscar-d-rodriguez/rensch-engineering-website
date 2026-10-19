@@ -57,6 +57,7 @@ jobs:
           FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
           FTP_PROTOCOL: ${{ vars.FTP_PROTOCOL || 'ftps' }}
           FTP_PORT: ${{ vars.FTP_PORT || '21' }}
+          FTP_AUDIT_REFS: ${{ vars.FTP_AUDIT_REFS || 'origin/main' }}
         run: python3 scripts/audit_production.py
       - name: Save production reconciliation evidence
         if: vars.FTP_PRODUCTION_AUDIT == 'true'

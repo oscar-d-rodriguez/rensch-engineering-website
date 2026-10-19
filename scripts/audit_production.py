@@ -16,7 +16,9 @@ from prepare_deploy import ASSET_DIRS, ROOT_FILES, select_site_files
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / '.production-audit'
-REFS = ['origin/main', 'origin/update-2026-professional-photos']
+REFS = os.environ.get('FTP_AUDIT_REFS', 'origin/main').split()
+if not REFS or REFS[0] != 'origin/main':
+    raise ValueError('The first audit reference must be origin/main')
 
 
 def connect():
