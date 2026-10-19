@@ -29,6 +29,24 @@ jobs:
       - name: Prepare public website payload
         run: python3 scripts/prepare_deploy.py
 
+  ftp-preflight:
+    name: Check production FTP access (read-only)
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && vars.FTP_PREFLIGHT_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Verify encrypted login and production directory without writing
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
+          FTP_PROTOCOL: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          FTP_PORT: ${{ vars.FTP_PORT || '21' }}
+        run: python3 scripts/check_ftp.py
+
   deploy:
     name: Deploy to production over FTP/FTPS
     needs: validate
