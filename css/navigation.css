@@ -1,6 +1,7 @@
 /* Bootstrap owns layout, collapse behavior and the lg breakpoint. */
 .site-navbar { background: #fff; }
-.site-navbar-home { background: orange; }
+.site-navbar-home > .container { background: orange; }
+.site-navbar-home > .container > :focus-visible { outline-color: #151515; }
 .site-navbar .navbar-brand { min-width: 0; max-width: 351px; }
 .site-navbar .navbar-brand img { width: 351px; height: auto; }
 .site-navbar .navbar-toggler { min-width: 44px; min-height: 44px; border: 0; color: #333; }
@@ -32,5 +33,20 @@
   .site-navbar.navbar-light .navbar-nav .nav-link { color: #222; padding: 8px; }
   .site-navbar.navbar-light .navbar-nav .nav-link.active,
   .site-navbar.navbar-light .navbar-nav .nav-link:hover { color: #fe9900; }
-  .site-navbar-home.navbar-light .navbar-nav .nav-link.active { color: #fff; }
+  .site-navbar-home.navbar-light .navbar-nav .nav-link.active,
+  .site-navbar-home.navbar-light .navbar-nav .nav-link:hover,
+  .site-navbar-home.navbar-light .navbar-nav .nav-link:focus-visible {
+    color: #151515;
+    outline-color: #151515;
+    /* Override the legacy global a:hover/a:focus !important reset. */
+    text-decoration: underline !important;
+    text-underline-offset: 0.25em;
+  }
+}
+
+/* The existing .container matches the site's custom desktop content widths.
+   Bootstrap's container-lg has different widths here, so keep only this
+   mobile exception to make the expanded menu reach both viewport edges. */
+@media (max-width: 991.98px) {
+  .site-navbar > .container { width: 100%; max-width: none; padding: 0; }
 }
