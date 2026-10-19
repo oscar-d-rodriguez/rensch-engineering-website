@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
 
 <!-- mega menu -->
-<link href="css/mega-menu/mega_menu.css" rel="stylesheet" type="text/css" />
+
 
 <!-- font-awesome -->
 <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -40,6 +40,7 @@
 <link href="css/skins/skin-orange.css" rel="stylesheet" type="text/css" />
 
 
+<link href="css/navigation.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -54,8 +55,9 @@
 <!--=================================
 header -->
 
+<div class="sticky-lg-top">
 <header id="header" class="clean">
-<div class="topbar dark">
+<div class="topbar dark d-none d-lg-block">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6">
@@ -85,71 +87,28 @@ header -->
 <!--=================================
  mega menu -->
 
-<div class="menu">
-  <!-- menu start -->
-   <nav id="menu" class="mega-menu">
-    <!-- menu list items container -->
-    <section class="menu-list-items">
-     <div class="container">
-      <div class="row">
-       <div class="col-lg-12 col-md-12 position-relative">
-        <!-- menu logo -->
-        <ul class="menu-logo">
-            <li><a href="index.html"><img id="logo_dark_img" src="images/logo2.png" alt="logo"></a></li>
-        </ul>
-        <!-- menu links -->
-        <ul class="menu-links">
-            <!-- active class -->
-            <li><a href="index.html">Home</a></li>
-            
-                 <!-- drop down multilevel  -->
-                <!-- 
-<ul class="drop-down-multilevel left-menu">
-                    <li><a href="index.html">Home v1</a></li>
-                    <li><a href="index-2.html">Home v2</a></li>
-                    <li><a href="index-3.html">Home v3</a></li>
-                    
-                    <li><a href="index-5.html">Home v5</a></li>
-                </ul>
- -->
-            
-            
-            <li><a href="services.html">Services <!-- <i class="fa fa-angle-down fa-indicator"></i> --></a>
-                 <!-- drop down multilevel  -->
-<!-- 
-                <ul class="drop-down-multilevel left-menu">
-                    <li><a href="#">HVAC</a></li>
-                    <li><a href="#">Lighting</a></li>
-                    <li><a href="#">Mechanical</a></li>
-                    <li><a href="#">Plumbing</a></li>
-                 </ul>
- -->
-            </li>
-            
-            <li><a href="about.html"> About</a></li>
-           
-
-   			<li class="active"><a href="projects.html"> Projects <!-- <i class="fa fa-angle-down fa-indicator"></i> --></a>
-                 <!-- drop down multilevel  -->
-
-              </li>
-
-            
-            <li><a href="careers.html">Careers</a></li>
-                   
-            <li><a href="contact.html">Contact</a></li>
-          
-
-            
-        </ul>
-       </div>
-      </div>
-     </div>
-    </section>
-   </nav>
-  <!-- menu end -->
- </div>
+<nav class="navbar navbar-expand-lg navbar-light site-navbar py-0" aria-label="Main navigation">
+  <div class="container-fluid px-0">
+    <a class="navbar-brand col col-lg-auto ms-3 me-4 me-lg-5 my-3 p-0" href="index.html" aria-label="Rensch Engineering home">
+      <img class="img-fluid d-block" src="images/logo2.png" width="351" height="67" alt="Rensch Engineering">
+    </a>
+    <button class="navbar-toggler flex-shrink-0 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle main navigation">
+      <span class="site-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-lg-end" id="main-navigation">
+      <ul class="navbar-nav list-unstyled mb-0 ps-0">
+          <li class="nav-item m-0 p-0"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item m-0 p-0"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item m-0 p-0"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item m-0 p-0"><a class="nav-link active" aria-current="page" href="projects.html">Projects</a></li>
+          <li class="nav-item m-0 p-0"><a class="nav-link" href="careers.html">Careers</a></li>
+          <li class="nav-item m-0 p-0"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 </header>
+</div>
 
 <!--=================================
  header -->
@@ -664,7 +623,7 @@ footer -->
 <script type="text/javascript" src="js/jquery.appear.js"></script>
 
 <!-- Menu -->
-<script type="text/javascript" src="js/mega-menu/mega_menu.js"></script>
+
 
 <!-- owl-carousel -->
 <script type="text/javascript" src="js/owl-carousel/owl.carousel.min.js"></script>

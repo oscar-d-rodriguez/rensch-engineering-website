@@ -6,7 +6,7 @@
 	<link href="images/favicon.ico" rel="shortcut icon" /><!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" /><!--  Roboto font -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" /><!-- Mega Menu -->
-	<link href="css/mega-menu/mega_menu.css" rel="stylesheet" type="text/css" /><!-- Font Awesome -->
+	<!-- Font Awesome -->
 	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" /><!-- Flaticon -->
 	<link href="css/flaticon.css" rel="stylesheet" type="text/css" /><!-- Magnific Popup -->
 	<link href="css/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" /><!-- Owl Carousel -->
@@ -15,6 +15,7 @@
 	<link href="css/general.css" rel="stylesheet" type="text/css" /><!-- Main Style -->
 	<link href="css/style.css" rel="stylesheet" type="text/css" /><!-- color scheme -->
 	<link href="css/skins/skin-orange.css" rel="stylesheet" type="text/css" />
+<link href="css/navigation.css" rel="stylesheet" type="text/css">
 </head>
 <body data-gr-ext-installed="" data-new-gr-c-s-check-loaded="14.1093.0" data-new-gr-c-s-loaded="14.1093.0"><!--=================================
  preloader -->
@@ -24,8 +25,9 @@
 <!--=================================
 header -->
 
+<div class="sticky-lg-top">
 <header class="clean" id="header">
-<div class="topbar dark">
+<div class="topbar dark d-none d-lg-block">
 <div class="container">
 <div class="row">
 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -53,67 +55,28 @@ header -->
 <!--=================================
  mega menu -->
 
-<div class="menu"><!-- menu start -->
-<nav class="mega-menu" id="menu"><!-- menu list items container -->
-<section class="menu-list-items">
-<div class="container" style="background: orange;">
-<div class="row">
-<div class="col-lg-12 col-md-12 position-relative"><!-- menu logo -->
-<ul class="menu-logo">
-	<li><a href="index.html"><img alt="logo" id="logo_dark_img" src="images/logo2.png" /></a></li>
-</ul>
-<!-- menu links -->
-
-<ul class="menu-links"><!-- active class -->
-	<li class="active"><a href="index.html" style="color: #ffffff;">Home</a> <!-- drop down multilevel  --> <!-- 
-    <ul class="drop-down-multilevel left-menu">
-                    <li><a href="index.html">Home v1</a></li>
-                    <li><a href="index-2.html">Home v2</a></li>
-                    <li><a href="index-3.html">Home v3</a></li>
-                    <li class="active"><a href="index.html">Home v4</a></li>
-                    <li><a href="index-5.html">Home v5</a></li>
-                </ul>
- --></li>
-	<li><a href="services.html">Services <!-- <i class="fa fa-angle-down fa-indicator"></i> --></a> <!-- drop down multilevel  --> <!-- 
-                <ul class="drop-down-multilevel left-menu">
-                    <li><a href="#">HVAC</a></li>
-                    <li><a href="#">Lighting</a></li>
-                    <li><a href="#">Mechanical</a></li>
-                     <li><a href="#">Plumbing</a></li>
-                 </ul>
- --></li>
-	<li><a href="about.html">About</a></li>
-	<li><a href="projects.html">Projects <!-- <i class="fa fa-angle-down fa-indicator"></i> --></a> <!-- drop down multilevel  --> <!-- 
-                <ul class="drop-down-multilevel left-menu">
-                    <li><a href="#">Banks</a></li>
-                    <li><a href="#">Commercial</a></li>
-                    <li><a href="#">Retail</a></li>
-                    <li><a href="#">Schools</a></li>
-                 </ul>
- --></li>
-	<li><a href="careers.html">Careers</a></li>
-	<!-- <li><a href="javascript:void(0)"></a> --><!-- drop down full multilevel --><!-- 
-           <ul class="drop-down-multilevel left-menu">
-                    <li><a href="elements-team.html"><i class="fa fa-users"></i> team</a></li>
-                    <li><a href="#"><i class="fa fa-opera"></i> Openings</a></li>
-                </ul>
- -->
-	<li><a href="contact.html">Contact</a></li>
-	<!--  <li><a href="javascript:void(0)"></a> --><!-- drop down multilevel  --><!-- 
-                <ul class="drop-down-multilevel left-menu">
-                    <li><a href="contact-1.html">Contact 1</a></li>
-                    <li><a href="contact-2.html">Contact 2</a></li>
-                    <li><a href="contact-3.html">Contact 3</a></li>
-                </ul>
- -->
-</ul>
-</div>
-</div>
-</div>
-</section>
+<nav class="navbar navbar-expand-lg navbar-light site-navbar site-navbar-home py-0" aria-label="Main navigation">
+  <div class="container-fluid px-0">
+    <a class="navbar-brand col col-lg-auto ms-3 me-4 me-lg-5 my-3 p-0" href="index.html" aria-label="Rensch Engineering home">
+      <img class="img-fluid d-block" src="images/logo2.png" width="351" height="67" alt="Rensch Engineering">
+    </a>
+    <button class="navbar-toggler flex-shrink-0 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle main navigation">
+      <span class="site-menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-lg-end" id="main-navigation">
+      <ul class="navbar-nav list-unstyled mb-0 ps-0">
+          <li class="nav-item m-0 p-0"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item m-0 p-0"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item m-0 p-0"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item m-0 p-0"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item m-0 p-0"><a class="nav-link" href="careers.html">Careers</a></li>
+          <li class="nav-item m-0 p-0"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
-</div>
 </header>
+</div>
 <!--=================================
  header --><!--=================================
  banner -->
@@ -791,7 +754,7 @@ footer -->
 
 <div id="back-to-top"></div>
 <!--=================================
- jquery --><!-- jquery  --><script type="text/javascript" src="js/jquery-3.6.0.min.js"></script><!-- popper.min --><script type="text/javascript" src="js/popper.min.js"></script><!-- bootstrap --><script type="text/javascript" src="js/bootstrap.min.js"></script><!-- appear --><script type="text/javascript" src="js/jquery.appear.js"></script><!-- bootstrap --><script type="text/javascript" src="js/mega-menu/mega_menu.js"></script><!-- owl-carousel --><script type="text/javascript" src="js/owl-carousel/owl.carousel.min.js"></script><!-- isotope --><script type="text/javascript" src="js/isotope/isotope.pkgd.min.js"></script><!-- magnific --><script type="text/javascript" src="js/magnific-popup/jquery.magnific-popup.min.js"></script><!-- REVOLUTION JS FILES --><script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script><script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script><!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) --><script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.migration.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script><!-- custom --><script type="text/javascript" src="js/custom.js"></script><script type="text/javascript">
+ jquery --><!-- jquery  --><script type="text/javascript" src="js/jquery-3.6.0.min.js"></script><!-- popper.min --><script type="text/javascript" src="js/popper.min.js"></script><!-- bootstrap --><script type="text/javascript" src="js/bootstrap.min.js"></script><!-- appear --><script type="text/javascript" src="js/jquery.appear.js"></script><!-- bootstrap --><!-- owl-carousel --><script type="text/javascript" src="js/owl-carousel/owl.carousel.min.js"></script><!-- isotope --><script type="text/javascript" src="js/isotope/isotope.pkgd.min.js"></script><!-- magnific --><script type="text/javascript" src="js/magnific-popup/jquery.magnific-popup.min.js"></script><!-- REVOLUTION JS FILES --><script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script><script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script><!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) --><script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.migration.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script><script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script><!-- custom --><script type="text/javascript" src="js/custom.js"></script><script type="text/javascript">
   (function($){
   "use strict";
 
