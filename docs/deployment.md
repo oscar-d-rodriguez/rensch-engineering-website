@@ -33,3 +33,11 @@ Review and merge a completed component/page PR into `main`; confirm the deploy j
 Rollback: revert the merged code change through GitHub and merge the revert into `main`; this triggers a new sync. Restore the hosting backup if the site needs immediate recovery or server-managed files were affected. Reverting the workflow's own introduction would also remove automatic deployment, so restore that deployment manually or keep the workflow while reverting site code.
 
 No production upload has been tested until credentials and the correct target folder are configured. The workflow does not create backups, set up hosting, or send a notification outside GitHub's normal Actions UI.
+
+## Read-only connection checks and production reconciliation
+
+The hosting connection was verified using the provider's confirmed Cyberduck settings: FTP on port 21, and `/` relative to this FTP account. Repository variables explicitly select FTP; the workflow defaults to FTPS when not configured. Plain FTP is unencrypted. Secrets remain in GitHub.
+
+`FTP_PREFLIGHT_ENABLED=true` enables the read-only connection job for pull requests from this repository (not forks). `FTP_PRODUCTION_AUDIT=true` additionally lists and hashes public application files over FTP and saves comparison evidence as a seven-day artifact. It never uploads, renames or deletes server files. PHP source is hashed but never included in the artifact. The audit compares against `origin/main` by default; an optional space-separated `FTP_AUDIT_REFS` variable can include other fetched branch references, with `origin/main` first. Disable the full audit flag after reconciliation to avoid repeating a full download on routine PR updates.
+
+PR #1 reconciles the already-deployed employee-photo changes plus the additional founder-photo markup and updated `tim.jpg`. Its merged application baseline was verified against 277 production file hashes. The navigation/deployment PR incorporates that baseline, so it preserves the live team content. Hosting configuration, logs, account backups and source-document metadata are deliberately outside the application baseline.
