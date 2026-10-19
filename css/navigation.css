@@ -13,6 +13,15 @@
 .site-navbar.navbar-light .navbar-nav .nav-link { color: #fff; padding: 10px 20px; font-size: 14px; font-weight: 500; text-transform: uppercase; }
 .site-navbar.navbar-light .navbar-nav .nav-link.active,
 .site-navbar.navbar-light .navbar-nav .nav-link:hover { color: #fe9900; }
+/* Keep interaction styling consistent across pages and override the legacy
+   global a:hover/a:focus !important reset. The underline inherits link color. */
+.site-navbar.navbar-light .navbar-nav .nav-link.active,
+.site-navbar.navbar-light .navbar-nav .nav-link:hover,
+.site-navbar.navbar-light .navbar-nav .nav-link:focus-visible {
+  text-decoration: underline !important;
+  text-decoration-thickness: 3px !important;
+  text-underline-offset: 0.25em;
+}
 .site-navbar a:focus-visible,
 .site-navbar button:focus-visible { outline: 3px solid #a85f00; outline-offset: 3px; }
 
@@ -38,9 +47,6 @@
   .site-navbar-home.navbar-light .navbar-nav .nav-link:focus-visible {
     color: #151515;
     outline-color: #151515;
-    /* Override the legacy global a:hover/a:focus !important reset. */
-    text-decoration: underline !important;
-    text-underline-offset: 0.25em;
   }
 }
 
