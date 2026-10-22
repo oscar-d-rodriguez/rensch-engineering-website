@@ -1,0 +1,14 @@
+/* Homepage-only repairs for the customized Bootstrap bundle: its base row
+   child gutter rule is missing. Explicit col-12 classes supply mobile widths. */
+.home-page .row > * {
+  min-width: 0;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-top: var(--bs-gutter-y);
+}
+.home-page .owl-carousel { min-width: 0; max-width: 100%; }
+.home-page .footer-address span { overflow-wrap: anywhere; }
+.home-mobile-hero { background: #f7f7f7; }
+.home-hero-title { font-size: clamp(1.75rem, 5vw, 2.5rem); line-height: 1.15; }
+.home-hero-photo { height: clamp(12rem, 45vw, 22rem); object-fit: cover; }
+.home-mobile-hero .btn { min-height: 44px; }
